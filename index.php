@@ -1,8 +1,6 @@
 <?php
 
-const FLAG = 'thc-flag-';
-
-function match($pass) {
+function login($pass) {
 
     // Une qui marche :
     // /^thcregexexex<-x<-->oe\/^t🍕2021£|€/
@@ -42,7 +40,7 @@ function match($pass) {
 
     }
 
-    echo '<p class="success">Vous êtes connecté ! Le flag est ' . FLAG . '</p>';
+    echo '<p class="success">Vous êtes connecté ! Le flag est ' . file_get_contents('./flag.txt') . '</p>';
 }
 
 ?>
@@ -88,7 +86,7 @@ function match($pass) {
             line-height: 1;
         }
 
-        h1 img {
+        h1 svg {
             height: 1.25em;
             width: auto;
             vertical-align: bottom;
@@ -132,13 +130,14 @@ function match($pass) {
 
 <body>
     <main>
-        <h1><img src="https://thcon.party/assets/png/thcon_logo.png" alt="Logo"> Connexion</h1>
+        <h1><svg width="213.721" height="269.299" viewBox="0 0 56.547 71.252" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="a"><path d="M0 224.706h350.588V0H0z"/></clipPath></defs><path d="M25.17 21.22h-2.612V15h2.612zM34.86 21.22h-2.612V15h2.612zM56.55 53.99l-4.58-4.68-1.226 1.227 5.806 5.933zM50.7 10.18h-1.797v31.911l1.797-1.797zM54.24 47.04l-1.47 1.47 3.78 3.862v-2.97zM45.82 10.18v34.999l1.956-1.957V10.18z" fill="#e52622"/><g clip-path="url(#a)" transform="matrix(.35278 0 0 -.35278 -5.563 76.45)"><path d="M157.33 71.189l-2.543-2.543-14.569 14.569 2.221 2.22v102.41h-17.675v-54.499H67.057v60.915l-51.291 22.456v-27.606l33.168-22.897v-7.53a4.307 4.307 0 002.7-5.343 4.315 4.315 0 10-8.241 2.564 4.288 4.288 0 002.335 2.628v5.996l-29.962 20.687v-8.501l22.223-15.342v-7.528l.011-.002a4.316 4.316 0 10-5.402-2.839 4.294 4.294 0 002.185 2.568v6.117l-19.017 13.13V14.739h51.291v67.313h57.707V14.739h51.291v37.307zM171.78 85.632l4.282-4.377v8.659z" fill="#e52622"/><path d="M162.7 104.91l13.36-13.36v96.295H162.7z" fill="#e52622"/></g></svg> Connexion</h1>
         <p><label for="password">Mot de passe administrateur&nbsp;:</label></p>
         <form method="POST" action="?">
             <p><input type="password" name="password" id="password"></p>
             <p class="center"><button type="submit">Se connecter</button></p>
         </form>
-        <?php if (isset($_POST['password'])) {match($_POST['password']);} ?>
+        <?php if (isset($_POST['password'])) {login($_POST['password']);} ?>
+
         <!-- Toutes les regex sont compilées avec le flag u (unicode), et seulement celui-là -->
     </main>
 </body>
