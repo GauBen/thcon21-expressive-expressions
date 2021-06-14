@@ -3,7 +3,7 @@
 Expressive Expressions is a CTF challenge of the THCon 2021, in the web category.
 
 <p align="center">
-  <img src="https://repository-images.githubusercontent.com/376939673/57957f80-cd5d-11eb-9193-f1acc7a1976b" alt="Screenshot of the challenge">
+  <img src="https://repository-images.githubusercontent.com/376939673/667e3100-cd61-11eb-9445-205cda5c6f7f" alt="Screenshot of the challenge">
 </p>
 
 ## Details
